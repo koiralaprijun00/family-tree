@@ -1,0 +1,54 @@
+# Logs
+logs
+*.log
+npm-debug.log.*  # Ignore numbered debug logs, but keep the latest
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directories
+coverage
+.nyc_output
+
+# Cache directories
+.cache/
+
+# Build artifacts
+build/
+dist/
+.next
+.next/
+
+# Dependency directories
+node_modules
+jspm_packages
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Environment variables
+.env
+
+# WebP images (if generated)
+*.webp
+
+# CSS map files
+*.css.map
+
+# Editor/IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Other
+.lock-wscript

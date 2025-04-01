@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sigmar&family=Yesteryear&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sigmar&family=Yesteryear&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  font-family: 'Phudu', Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+
+    font-family: 'Phudu', Arial, sans-serif;
+  }
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+body {
+  font-family: 'Phudu', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Phudu', Arial, sans-serif;
+}
+p{
+  font-family: 'Rubik', Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 5 10px; 
+    margin: 5px auto; 
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-float-delay { animation: float 4s ease-in-out 1s infinite; }
+.animate-float-slow { animation: float 6s ease-in-out infinite; }
+.animate-float-slower { animation: float 8s ease-in-out 2s infinite; }
+.animate-bounce-light { animation: bounce 2s infinite; transform-origin: center bottom; animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1); }
+.animate-bounce-fast { animation: bounce 1s infinite; }
+.animate-spin-slow { animation: spin 10s linear infinite; }
+
+
+.clip-path-nepal {
+  clip-path: polygon(0 0, 60% 0, 0 100%);
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s infinite;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
+/* Custom scrollbar for the sidebar */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
+  border-radius: 10px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+/* Custom animations for elements */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-in-out;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .mobile-full-height {
+    height: calc(100vh - 4rem);
+  }
+  
+  .mobile-compact-text {
+    font-size: 0.875rem;
+  }
+  
+  .mobile-compact-padding {
+    padding: 0.75rem;
+  }
+}
+
+
+/* Add to your global CSS */
+.ad-container {
+  display: block;
+  width: 100%;
+  min-width: 300px;
+  min-height: 100px;
+  margin: 20px auto;
+  overflow: hidden;
+  clear: both;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .ad-container {
+    min-width: 250px;
+  }
+}
+
+
+/* SVG District styles */
+.district-map-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.district-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease;
+}
+
+.district-svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.district-correct {
+  fill: #4ade80 !important; /* Bright green for correct guesses */
+  stroke: #0f172a;
+  stroke-width: 1px;
+  opacity: 0.9;
+}
+
+.district-unguessed {
+  fill: transparent;
+  stroke: #64748b;
+  stroke-width: 0.5px;
+  opacity: 0.3;
+}
+
+.district-highlighted {
+  stroke: #1e40af !important;
+  stroke-width: 2px !important;
+  opacity: 0.7;
+}
+
+.district-hover {
+  cursor: pointer;
+  opacity: 0.5;
+  fill: #94a3b8;
+}
+
+/* Game interface styles */
+.quiz-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.quiz-timer {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.quiz-score {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.quiz-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.quiz-button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.quiz-button:hover {
+  background-color: #1d4ed8;
+}
+
+.quiz-button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.quiz-feedback {
+  text-align: center;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}
+
+.quiz-feedback-correct {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.quiz-feedback-incorrect {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.quiz-guesses-list {
+  margin-top: 1.5rem;
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.quiz-guess-item {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.quiz-guess-item:not(:last-child) {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.quiz-guess-check {
+  color: #22c55e;
+  margin-right: 0.5rem;
+}
+
+/* Language selector */
+.language-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.language-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: #e2e8f0;
+  color: #1e293b;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.language-button:hover {
+  background-color: #cbd5e1;
+}
+
+.language-button-active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .quiz-layout {
+    flex-direction: column;
+  }
+  
+  .district-map-container {
+    margin-bottom: 1.5rem;
+  }
+}
+
+
+.checklist-item h3 {
+  font-family: 'Rubik', Arial, sans-serif;
+}
+.gradient-btn {
+  position: relative;
+  padding: 2px; /* Simulates border thickness */
+  background: linear-gradient(to right, #8B5CF6, #EC4899);
+  border-radius: 0.5rem; /* Matches rounded-lg */
+}
+
+.gradient-btn > span {
+  display: block;
+  padding: 0.5rem 1rem; /* Inner padding (equivalent to px-4 py-2) */
+  background: white; /* Inner background color */
+  border-radius: 0.375rem; /* Slightly smaller to fit inside */
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .gradient-btn {
+    background: linear-gradient(to right, #D8B4FE, #F9A8D4);
+  }
+  .gradient-btn > span {
+    background: #1F2937; /* Dark mode inner background */
+  }
+}
+
+/* Hover effect */
+.gradient-btn:hover {
+  opacity: 0.75;
+}
